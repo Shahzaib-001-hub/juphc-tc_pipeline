@@ -9,3 +9,4 @@ $ kubectl get pods
 NAME                              READY   STATUS    RESTARTS   AGE
 tax-calculator-7bf7bf4955-4j8kp   1/1     Running   0          45s
 tax-calculator-7bf7bf4955-w9m2v   1/1     Running   0          45s
+
