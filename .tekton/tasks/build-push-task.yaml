@@ -1,0 +1,25 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: build-push-task
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: IMAGE_NAME
+      type: string
+      description: "Target image repository name and tag (e.g. us.icr.io/sn-labs-taxcalculator/tax-calculator:v1.0)"
+    - name: DOCKERFILE
+      type: string
+      default: "./Dockerfile"
+      description: "Path to the Dockerfile"
+  steps:
+    - name: build-and-push
+      image: gcr.io/kaniko-project/executor:v1.9.0-debug
+      workingDir: $(workspaces.source.path)
+      command: ["/kaniko/executor"]
+      args:
+        - --dockerfile=$(params.DOCKERFILE)
+        - --context=dir://$(workspaces.source.path)
+        - --destination=$(params.IMAGE_NAME)
+        - --cache=true

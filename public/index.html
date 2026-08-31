@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Cloud DevOps - Tax Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="ibm-blue">IBM</span> Cloud DevOps | <strong>Tax Calculator</strong>
+      </div>
+      <div class="badge">Cloud-Native v1.0</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card form-card">
+      <h2>Calculate Your Income Tax</h2>
+      <p class="subtitle">Enter your annual income and allowable deductions to compute progressive income tax.</p>
+
+      <form id="taxForm">
+        <div class="form-group">
+          <label for="grossIncome">Annual Gross Income ($)</label>
+          <input type="number" id="grossIncome" name="grossIncome" placeholder="e.g. 750000" min="0" step="any" required>
+        </div>
+
+        <div class="form-group">
+          <label for="deductions">Allowable Deductions ($)</label>
+          <input type="number" id="deductions" name="deductions" placeholder="e.g. 50000" min="0" step="any" value="0">
+        </div>
+
+        <button type="submit" id="calculateBtn" class="btn-primary">Calculate Tax</button>
+      </form>
+    </div>
+
+    <div class="card result-card" id="resultCard" style="display: none;">
+      <h2>Tax Summary</h2>
+      
+      <div class="summary-metrics">
+        <div class="metric-box">
+          <div class="metric-label">Taxable Income</div>
+          <div class="metric-value" id="taxableIncomeVal">$0</div>
+        </div>
+        <div class="metric-box highlight">
+          <div class="metric-label">Total Tax Due</div>
+          <div class="metric-value" id="totalTaxVal">$0</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Net Take-Home</div>
+          <div class="metric-value" id="netIncomeVal">$0</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Effective Rate</div>
+          <div class="metric-value" id="effectiveRateVal">0%</div>
+        </div>
+      </div>
+
+      <h3>Tax Bracket Breakdown</h3>
+      <table class="tax-table" id="breakdownTable">
+        <thead>
+          <tr>
+            <th>Income Bracket ($)</th>
+            <th>Tax Rate</th>
+            <th>Taxable in Slab</th>
+            <th>Tax Amount</th>
+          </tr>
+        </thead>
+        <tbody id="breakdownBody">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tax Calculator Application • Automated with Tekton CI/CD on IBM Cloud</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

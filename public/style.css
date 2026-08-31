@@ -1,0 +1,198 @@
+:root {
+  --primary-blue: #0f62fe;
+  --hover-blue: #0353e9;
+  --dark-bg: #161616;
+  --card-bg: #ffffff;
+  --body-bg: #f4f4f4;
+  --text-primary: #161616;
+  --text-secondary: #525252;
+  --border-color: #e0e0e0;
+  --accent-color: #24a148;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #161616;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid var(--primary-blue);
+}
+
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ibm-blue {
+  color: #4589ff;
+  font-weight: 700;
+}
+
+.badge {
+  background-color: #393939;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+  border-color: var(--primary-blue);
+  background-color: #fff;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-blue);
+}
+
+.summary-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-box {
+  background: #f4f4f4;
+  padding: 1.25rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--border-color);
+}
+
+.metric-box.highlight {
+  border-left-color: var(--primary-blue);
+  background: #edf5ff;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0.35rem;
+  color: var(--text-primary);
+}
+
+.metric-box.highlight .metric-value {
+  color: var(--primary-blue);
+}
+
+.tax-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tax-table th, .tax-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tax-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tax-table td {
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #161616;
+  color: #8d8d8d;
+  font-size: 0.85rem;
+}

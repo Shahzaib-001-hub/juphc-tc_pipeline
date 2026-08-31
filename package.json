@@ -1,0 +1,25 @@
+{
+  "name": "tax-calculator",
+  "version": "1.0.0",
+  "description": "Tax Calculator Application with DevOps Pipeline and Containerization",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jasmine"
+  },
+  "keywords": [
+    "tax-calculator",
+    "devops",
+    "ibm-cloud",
+    "tekton",
+    "jasmine"
+  ],
+  "author": "DevOps Engineer",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jasmine": "^5.1.0"
+  }
+}

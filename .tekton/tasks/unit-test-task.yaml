@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: unit-test-task
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: IMAGE
+      type: string
+      default: "node:18-alpine"
+      description: "Docker image used for executing Jasmine tests"
+  steps:
+    - name: run-unit-tests
+      image: $(params.IMAGE)
+      workingDir: $(workspaces.source.path)
+      script: |
+        #!/bin/sh
+        set -e
+        echo "=== Installing Dependencies for Testing ==="
+        npm install
+        echo "=== Running Jasmine Unit Tests ==="
+        npm test
+        echo "=== Unit Tests Completed Successfully ==="

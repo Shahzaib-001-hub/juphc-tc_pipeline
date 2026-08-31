@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: deploy-task
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: MANIFEST_DIR
+      type: string
+      default: "k8s"
+      description: "Directory containing Kubernetes manifest files"
+  steps:
+    - name: deploy-to-k8s
+      image: bitnami/kubectl:latest
+      workingDir: $(workspaces.source.path)
+      script: |
+        #!/bin/sh
+        set -e
+        echo "=== Applying Kubernetes Manifests ==="
+        kubectl apply -f $(params.MANIFEST_DIR)/
+        echo "=== Waiting for Deployment Rollout ==="
+        kubectl rollout status deployment/tax-calculator-deployment --timeout=120s
+        echo "=== Application Successfully Deployed to Kubernetes ==="
