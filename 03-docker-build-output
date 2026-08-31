@@ -1,22 +1,22 @@
 $ docker build -t tax-calculator:v1 .
-Sending build context to Docker daemon  2.048MB
-Step 1/6 : FROM nginx
- ---> 605c77e624dd
-Step 2/6 : COPY favicon.ico /usr/share/nginx/html/favicon.ico
- ---> Using cache
- ---> 8a4ef6e39210
-Step 3/6 : COPY index.html /usr/share/nginx/html/index.html
- ---> Using cache
- ---> 9b2d8e4125f1
-Step 4/6 : COPY script.js /usr/share/nginx/html/script.js
- ---> Using cache
- ---> 7c3f8e1245a2
-Step 5/6 : COPY style.css /usr/share/nginx/html/style.css
- ---> Using cache
- ---> 3d1a4e5296b3
-Step 6/6 : COPY taxCalculator.js /usr/share/nginx/html/taxCalculator.js
- ---> Using cache
- ---> 5f2b8a7194c4
-Successfully built 5f2b8a7194c4
-Successfully tagged tax-calculator:v1
-
+[+] Building 8.6s (12/12) FINISHED
+ => [internal] load build definition from Dockerfile                                                      0.0s
+ => => transferring dockerfile: 289B                                                                      0.0s
+ => [internal] load .dockerignore                                                                         0.0s
+ => => transferring context: 52B                                                                          0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                           1.2s
+ => [internal] load build context                                                                         0.0s
+ => => transferring context: 14.50kB                                                                      0.0s
+ => [1/6] FROM docker.io/library/nginx:latest@sha256:0d17b2ced6102262bf1f768f824d02fc4da386412b80f3ebf9c  4.8s
+ => => resolve docker.io/library/nginx:latest@sha256:0d17b2ced6102262bf1f768f824d02fc4da386412b80f3ebf9c  0.0s
+ => => sha256:aed0d27c95e1e1279a0b9351e39b7132a76f24ef3dd0be569feef64da0471b48 29.56MB / 29.56MB        2.8s
+ => => extracting sha256:aed0d27c95e1e1279a0b9351e39b7132a76f24ef3dd0be569feef64da0471b48              1.8s
+ => [2/6] COPY favicon.ico /usr/share/nginx/html/favicon.ico                                              0.1s
+ => [3/6] COPY index.html /usr/share/nginx/html/index.html                                               0.1s
+ => [4/6] COPY script.js /usr/share/nginx/html/script.js                                                 0.1s
+ => [5/6] COPY style.css /usr/share/nginx/html/style.css                                                 0.1s
+ => [6/6] COPY taxCalculator.js /usr/share/nginx/html/taxCalculator.js                                   0.1s
+ => exporting to image                                                                                    1.2s
+ => => exporting layers                                                                                   1.0s
+ => => writing image sha256:5f2b8a7194c4e20d88b0a424268e317bb7d5d4d3c3fbcf3941459a93c9d74e89              0.1s
+ => => naming to docker.io/library/tax-calculator:v1                                                      0.1s
