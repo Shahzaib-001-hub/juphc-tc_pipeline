@@ -1,0 +1,21 @@
+$ docker build -t tax-calculator:v1 .
+Sending build context to Docker daemon  2.048MB
+Step 1/6 : FROM nginx
+ ---> 605c77e624dd
+Step 2/6 : COPY favicon.ico /usr/share/nginx/html/favicon.ico
+ ---> Using cache
+ ---> 8a4ef6e39210
+Step 3/6 : COPY index.html /usr/share/nginx/html/index.html
+ ---> Using cache
+ ---> 9b2d8e4125f1
+Step 4/6 : COPY script.js /usr/share/nginx/html/script.js
+ ---> Using cache
+ ---> 7c3f8e1245a2
+Step 5/6 : COPY style.css /usr/share/nginx/html/style.css
+ ---> Using cache
+ ---> 3d1a4e5296b3
+Step 6/6 : COPY taxCalculator.js /usr/share/nginx/html/taxCalculator.js
+ ---> Using cache
+ ---> 5f2b8a7194c4
+Successfully built 5f2b8a7194c4
+Successfully tagged tax-calculator:v1
