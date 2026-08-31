@@ -1,0 +1,9 @@
+$ docker push us.icr.io/sn-labs-taxcalculator/tax-calculator:v1
+The push refers to repository [us.icr.io/sn-labs-taxcalculator/tax-calculator]
+3a8f9c2d1b4e: Layer already exists
+8a4ef6e39210: Pushed
+9b2d8e4125f1: Pushed
+7c3f8e1245a2: Pushed
+3d1a4e5296b3: Pushed
+5f2b8a7194c4: Pushed
+v1: digest: sha256:7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069 size: 1572
