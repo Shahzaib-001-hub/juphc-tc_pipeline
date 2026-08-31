@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: tax-calculator-pipeline-run-
+spec:
+  pipelineRef:
+    name: tax-calculator-pipeline
+  params:
+    - name: git-url
+      value: "https://github.com/Shahzaib-001-hub/Tax_calculator.git"
+    - name: git-revision
+      value: "main"
+    - name: image-name
+      value: "us.icr.io/sn-labs-taxcalculator/tax-calculator:v1"
+  workspaces:
+    - name: pipeline-workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
