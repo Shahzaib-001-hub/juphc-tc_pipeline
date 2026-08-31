@@ -58,3 +58,4 @@ spec:
       workspaces:
         - name: source
           workspace: pipeline-workspace
+

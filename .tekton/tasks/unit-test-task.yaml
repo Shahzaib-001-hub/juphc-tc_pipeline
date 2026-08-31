@@ -22,3 +22,4 @@ spec:
         echo "=== Running Jasmine Unit Tests ==="
         npm test
         echo "=== Unit Tests Completed Successfully ==="
+

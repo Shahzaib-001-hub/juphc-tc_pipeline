@@ -22,3 +22,4 @@ spec:
         echo "=== Waiting for Deployment Rollout ==="
         kubectl rollout status deployment/tax-calculator-deployment --timeout=120s
         echo "=== Application Successfully Deployed to Kubernetes ==="
+

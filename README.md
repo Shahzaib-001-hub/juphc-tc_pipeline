@@ -64,3 +64,4 @@ kubectl apply -f .tekton/pipeline.yaml
 # Trigger Pipeline
 kubectl create -f .tekton/pipelinerun.yaml
 ```
+

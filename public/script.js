@@ -59,3 +59,4 @@ document.getElementById('taxForm').addEventListener('submit', async (e) => {
     alert('An unexpected error occurred while calculating tax.');
   }
 });
+
